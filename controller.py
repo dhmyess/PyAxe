@@ -70,7 +70,7 @@ class BitaxeController:
             time.sleep(0.5)
             self.ser.reset_input_buffer()
             self.ser.reset_output_buffer()
-            print(f"[OK] Terhubung ke {port} @ {baudrate} baud")
+            print(f"[OK] Connected to {port} @ {baudrate} baud")
         except serial.SerialException as e:
             print(f"[ERR] Gagal membuka port serial: {e}")
             sys.exit(1)
@@ -324,7 +324,7 @@ def power_on_tps546(controll, target_voltage=1.15):
             return False
 
     return False
-def baca_output_current(controll):
+def read_output_current(controll):
     res = controll.i2c_readwrite(TPS546_ADDR, CMD_TPS_READ_IOUT, 2)
     if res and len(res) == 2:
         iout = linear11_to_float(res)
