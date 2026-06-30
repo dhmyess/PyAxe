@@ -498,7 +498,7 @@ def mine_loop():
                                                 current_time_string = now.strftime("%H:%M:%S")
                                                 if diff_result > best_diff:
                                                     best_diff = diff_result
-                                                    print(f"  [✅] {current_time_string} New Best Diff!")
+                                                    print(f"  [✅] {current_time_string} New Session Best Diff!")
                                                     print(f"       Job ID: {current_job[0]}")
                                                     print(f"       EN2   : {extranonce2}")
                                                     print(f"       Ntime : {ntime:08x}")
